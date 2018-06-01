@@ -17,10 +17,10 @@ def str2float(s):
     frac = 0
 
     def flt(x,y):
-        nonlocal frac   #use global variable
+        nonlocal frac   # using global variable
         if frac == 0:
             if x == -1:
-                frac += 2  #match the following frac += 1
+                frac += 2  # matching the following frac += 1
                 return y * 0.1
             if y == -1:
                 frac += 1
@@ -36,13 +36,14 @@ def str2float(s):
     
     return reduce(flt, map(str2num, s))
 
-#test
+# test
 print('str2float(\'123.456\') =', str2float('123.456'))
 if abs(str2float('123.456') - 123.456) < 0.00001:
     print('测试成功!')
 else:
     print('测试失败!')
 
+# stricter test
 print(str2float('0'))
 print(str2float('123.456'))
 print(str2float('123.45600'))
